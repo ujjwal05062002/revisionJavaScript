@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="center">
+        <button id="btn" onclick="fun()">Change</button>
+        <p id="para" >
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis
+          quibusdam aliquid, sequi cum labore recusandae rerum facere, eligendi
+          laudantium alias, hic consequuntur veritatis in? Eius facere aut quasi
+          magni nisi quae? Sapiente sunt magnam, laborum consequuntur aspernatur
+          nobis, corrupti itaque facilis, fugiat dicta nulla perspiciatis eum
+          maxime soluta debitis iste cumque quasi doloremque reiciendis commodi?
+          Optio non dolorem cupiditate recusandae iste laboriosam beatae,
+          mollitia explicabo ipsum a quisquam, laborum ratione magni.
+        </p>
+      </div>
+    </div>
+    <script>
+      var text1 =
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis quibusdam aliquid, sequi cum labore recusandae rerum facere, eligendi laudantium alias, hic consequuntur veritatis in? Eius facere aut quasi magni nisi quae? Sapiente sunt magnam, laborum consequuntur aspernatur nobis, corrupti itaque facilis, fugiat dicta nulla perspiciatis eum maxime soluta debitis iste cumque quasi doloremque reiciendis commodi? Optio non dolorem cupiditate recusandae iste laboriosam beatae, mollitia explicabo ipsum a quisquam, laborum ratione magni.";
+
+      var text2 =
+        "Culpa vel iusto, consequatur deleniti numquam sequi, quod minus quam deserunt aliquam quae. Velit debitis soluta quibusdam labore quasi deserunt repudiandae, laudantium blanditiis facere minus, dicta aliquid dolore sed qui. In dolor, error doloribus distinctio dolorem harum aliquid incidunt eum expedita delectus commodi perferendis? Neque necessitatibus temporibus eius explicabo facere iusto odit nulla nobis tempore animi! Id earum eaque eum sequi omnis perferendis, beatae illo corporis doloribus explicabo maxime accusamus ad quod? Ut aperiam odio nihil praesentium omnis cumque exercitationem, consequuntur vel qui eveniet delectus fugit modi beatae iusto officiis at laborum in veniam hic nemo porro minus rerum sequi obcaecati. Autem dignissimos sequi officia. Expedita officiis veritatis nemo labore? Incidunt eaque placeat cum qui ducimus minus fugit, veritatis dolorum, illum consectetur, quo temporibus rem! Voluptates adipisci aliquid itaque!";
+
+      var p = document.getElementById("para");
+      var btn = document.getElementById("btn")
+      var choice = 2;
+      function fun() {
+        if (choice == 1) {
+          p.innerHTML = text1;
+          choice = 2;
+          btn.innerHTML = "Change"  
+        } else {
+          p.innerHTML = text2;
+          choice = 1;
+          btn.innerHTML = "Reset"  
+        }
+      }
+    </script>
+  </body>
+</html>
