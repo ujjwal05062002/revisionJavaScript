@@ -1,0 +1,156 @@
+<!-- keyboard events : onkeydown onkeyup onkeypress -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        height: 100vh;
+        width: 100vw;
+      }
+      .center {
+        width: 80%;
+        margin: auto;
+      }
+
+      .center h4 {
+        background-color: navy;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        margin: 3px 0;
+      }
+
+      .center input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      .center button {
+        background-color: navy;
+        width: 100%;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .center h5 {
+        background-color: navy;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="center">
+        <h4>Keyboard Events Example</h4>
+        <h5 id="hname">name : </h5>
+        <h5 id="hemail">email : </h5>
+        <h5 id="hphone">phone : </h5>
+        <h5 id="hdesignation">designation : </h5>
+        <h5 id="hsalary">salary : </h5>
+        <h5 id="hcity">city : </h5>
+        <h5 id="hstate">state : </h5>
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Enter full name"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Enter email"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Enter phone"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <input
+          type="text"
+          id="designation"
+          name="designation"
+          placeholder="Enter desingnation"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <input
+          type="number"
+          id="salary"
+          name="salary"
+          placeholder="Enter salary"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Enter city"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <input
+          type="text"
+          id="state"
+          name="state"
+          placeholder="Enter state"
+          onkeydown="fun1(id)"
+          onkeypress="fun2(id)"
+          onkeyup="fun3(id)"
+        />
+        <button>Submit</button>
+      </div>
+    </div>
+    <script>
+      function fun1(id) {
+        var input = document.getElementById(id);
+        input.style.backgroundColor = "lightgray";
+        input.style.color = "navy";
+        console.log("onKeyDown event is called");
+      }
+
+      function fun2(id) {
+        var input = document.getElementById(id);
+        input.style.backgroundColor = "green";
+        input.style.color = "white";
+        console.log("onKeyPress event is called");
+      }
+      function fun3(id){
+        var input = document.getElementById(id);
+        var heading = document.getElementById(`h${id}`)
+        input.style.backgroundColor = "white";
+        input.style.color = "black";
+        console.log("onKeyup event is called");
+        heading.innerHTML = `${id} : ${input.value}`
+      }
+    </script>
+  </body>
+</html>
+
