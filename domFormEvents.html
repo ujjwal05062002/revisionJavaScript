@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Events Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .center {
+        width: 80%;
+      }
+      .center h4 {
+        background-color: navy;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        margin: 3px 0;
+      }
+      .center input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 5px;
+        transition: all 0.3s;
+      }
+      .center button {
+        background-color: navy;
+        width: 100%;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .center h5 {
+        background-color: navy;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="center">
+        <form onsubmit="return funSubmit(event)">
+          <h4>Form Events Example</h4>
+          <h5 id="hfname">Name: </h5>
+          <h5 id="hemail">Email: </h5>
+          <h5 id="hphone">Phone: </h5>
+          <h5 id="hdesignation">Designation: </h5>
+          <h5 id="hsalary">Salary: </h5>
+          <h5 id="hcity">City: </h5>
+          <h5 id="hstate">State: </h5>
+
+          <input type="text" id="fname" placeholder="Enter full name" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+          <input type="text" id="email" placeholder="Enter email" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+          <input type="text" id="phone" placeholder="Enter phone" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+          <input type="text" id="designation" placeholder="Enter designation" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+          <input type="number" id="salary" placeholder="Enter salary" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+          <input type="text" id="city" placeholder="Enter city" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+          <input type="text" id="state" placeholder="Enter state" onfocus="fun1(this.id)" oninput="fun2(this.id)" onblur="fun3(this.id)" />
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function fun1(id) {
+        var input = document.getElementById(id);
+        input.style.backgroundColor = "lightgray";
+        input.style.color = "navy";
+        console.log(`onFocus event triggered for ${id}`);
+      }
+
+      function fun2(id) {
+        var input = document.getElementById(id);
+        input.style.backgroundColor = "green";
+        input.style.color = "white";
+        console.log(`onInput event triggered for ${id}`);
+      }
+
+      function fun3(id) {
+        var input = document.getElementById(id);
+        var heading = document.getElementById(`h${id}`);
+        input.style.backgroundColor = "white";
+        input.style.color = "black";
+        console.log(`onBlur event triggered for ${id}`);
+        heading.innerHTML = `${id.charAt(0).toUpperCase() + id.slice(1)}: ${input.value}`;
+      }
+
+      function funSubmit(event) {
+        event.preventDefault(); // Prevent page reload
+        alert("Form Submitted Successfully!");
+        console.log("Form submitted!");
+        return false; // Ensure it does not submit traditionally
+      }
+    </script>
+  </body>
+</html>
