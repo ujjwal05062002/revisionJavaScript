@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM create delete</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main {
+        width: 100vw;
+        height: 100vh;
+        /* display: grid;
+            place-items: center; */
+      }
+
+      .center {
+        width: 80%;
+        margin: auto;
+      }
+
+      .first,
+      .second {
+        width: 100%;
+      }
+
+      .first {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .first button {
+        width: 33%;
+        padding: 10px;
+      }
+
+      .second {
+        text-align: center;
+        padding: 3px;
+      }
+
+      .second p {
+        padding: 10px;
+        margin: 10px;
+        background-color: green;
+        color: white;
+      }
+
+      .material-symbols-outlined {
+        float: right;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="center">
+        <div class="first">
+          <button onclick="createItem()">CREATE</button>
+          <button onclick="deleteItem()">DELETE FIRST</button>
+          <button onclick="clearAll()">CLEAR ALL</button>
+        </div>
+        <div class="second"></div>
+      </div>
+    </div>
+
+    <script>
+      var second = document.querySelector(".second");
+      var count = 1;
+      var center =  document.querySelector(".center")
+      function createItem() {
+        var p = document.createElement("p");
+        p.innerHTML = `this is paragraph p${count} <span class="material-symbols-outlined" onclick="deleteItem('p${count}')">
+delete
+</span>`;
+        p.id = `p${count}`;
+        count++;
+        second.appendChild(p);
+      }
+
+      function deleteItem(id) {
+        if (id) {
+          var p = document.getElementById(id);
+        } else {
+          var p = second.firstElementChild;
+        }
+
+        if (p) {
+          second.removeChild(p);
+        }
+      }
+
+      function clearAll(){
+        second.innerHTML = ""
+      }
+    </script>
+  </body>
+</html>
