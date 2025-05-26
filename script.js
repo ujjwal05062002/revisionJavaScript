@@ -7,5 +7,10 @@ var even_sum = 0
 var odd_sum = 0
 
 for (var i = start_num; i<=end_num; i++){
-    
+    if (i%2==0){
+        even_sum = even_sum + i
+    }
+    else{
+        odd_sum = odd_sum + i
+    }
 }
