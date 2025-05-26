@@ -14,3 +14,15 @@ for (var i = start_num; i<=end_num; i++){
         odd_sum = odd_sum + i
     }
 }
+
+// factorial of any number
+
+var fact = prompt(Number("Enter the factorial number : "))
+
+var factorial = 1
+
+for (var i=fact; i>=1; i--){
+    factorial = factorial*i
+}
+
+
